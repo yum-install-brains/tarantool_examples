@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
 	<style>
 	#cover h2 {
-		margin:0px -150px 0;
+		margin:0px -0px 0;
 		color:#FFF;
 		text-align:center;
 		font-size:100px;
@@ -45,9 +45,13 @@
 				color:white;
 				list-style-type: none;
 			}
-			#black code.mark{
-				color:white;
-				list-style-type: none;
+			#black {
+				background: url(pictures/tarantool_bg.jpg) center no-repeat;
+				background-size: 1000px 800px;
+			}
+			#black_pic {
+				background: url(pictures/tarantool_wal.jpg) center no-repeat;
+				background-size: 1000px 700px;
 			}
 	</style>
 </head>
@@ -64,22 +68,44 @@
 	</section>
 
 	<section class="slide black" id = "black">
+		<h2>Кейсы использования</h2>
+		<center><p> Инструмент выбирается под задачу. </p></center>
+		<ul>
+			<li class="next"> горизонтальное масштабирование (для РСУБД это проблема) </li>
+			<li class="next"> hot data (РСУБД для cold data) </li>
+			<li class="next"> высокая производительность </li>
+		</ul>
+	</section>
+
+	<section class="slide black" id = "black">
 		<h2>Key features</h2>
 		<ul>
-			<li class="next"> SQL </li>
+			<li class="next"> SQL (начиная с 1.8) </li>
 			<li class="next"> ACID </li>
-			<li class="next"> master-master репликация </li>
+			<li class="next"> in-memory и disk движки </li>
+			<li class="next"> lock-free </li>
+			<li class="next"> синхронная, асинхронная, master-master репликация </li>
 			<li class="next"> sharding из коробки </li>
-			<li class="next"> Application server + database </li>
+			<li class="next"> application server + database </li>
 			<li class="next"> open-source </li>
 		</ul>
 	</section>
 
 	<section class="slide black" id = "black">
-		<h2>Джвижок базы данных</h2>
+		<h2>Модель данных</h2>
+		<ul>
+			<li class="next"> Пространства (spaces) </li>
+			<li class="next"> Кортежи (tuples) </li>
+			<li class="next"> Поля (fields) </li>
+			<li class="next"> Индексы (indexes) </li>
+		</ul>
+	</section>
+
+	<section class="slide black" id = "black">
+		<h2>Двиижок базы данных</h2>
 		<ul>
 			<li class="next"> memtx (Always in-memory != cache) </li>
-			<li class="next"> vinyl (часть данных на диске) </li>
+			<li class="next"> vinyl (часть данных на диске, append only) </li>
 		</ul>
 	</section>
 
@@ -93,11 +119,8 @@
 		<p class="next"><a href="https://habrahabr.ru/company/oleg-bunin/blog/340062/">Подробнее про snapshot в Tarantool</a></p>
 	</section>
 
-	<section class="slide black" id = "black">
-		<h2>Последовательный WAL</h2>
-		<figure>
-			<img class="cover" src="pictures/wal.png">
-		</figure>
+	<section class="slide black" id = "black_pic">
+		<!-- pic -->
 	</section>
 
 	<section class="slide black" id = "black">
@@ -123,6 +146,22 @@
 			Tarantool можно посмотреть
 			<a href="https://github.com/yum-install-brains/tarantool_examples/tree/master/tarantool_example1">тут</a>.
 		</p>
+	</section>
+
+	<section class="slide black" id = "black">
+		<h2>Полезные статьи</h2>
+		<ul>
+			<li><a href="https://habrahabr.ru/company/oleg-bunin/blog/340062/">Внутреннее устройство Tarantool </a></li>
+			<li><a href="https://tarantool.org/en/doc/1.7/index.html">Документация </a></li>
+			<li><a href="https://t.me/tarantoolru">Telegram-канал разработчиков </a></li>
+			<li><a href="https://hub.docker.com/r/tarantool/tarantool/">Docker-образ </a></li>
+			<li><a href="https://media.readthedocs.org/pdf/tarantool-python/latest/tarantool-python.pdf">Документация для питонячей библиотеки </a></li>
+		</ul>
+	</section>
+
+	<section class="slide black" id = "black">
+		<h2>«Turn your world upside down.»</h2>
+		<center><p>(Слоган из Spider-Man)</p></center>
 	</section>
 
 	<div class="progress"></div>
