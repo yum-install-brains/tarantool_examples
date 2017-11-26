@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Tarantool meetup 27.11.2017 Soldatov</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+	<style>
+	#cover h2 {
+		margin:0px -150px 0;
+		color:#FFF;
+		text-align:center;
+		font-size:100px;
+		}
+	#cover p {
+		margin:10px 0 0;
+		text-align:center;
+		color:#FFF;
+		font-style:italic;
+		font-size:20px;
+		}
+		#cover p a {
+			color:#FFF;
+			}
+		#black img {
+			margin:30px 0 0;
+			}
+		#black h2 {
+			margin:30px 0 0;
+			color:#FFF;
+			text-align:center;
+			font-size:70px;
+			}
+		#black p {
+			margin:20px 0 0;
+			color:#FFF;
+			font-style:italic;
+			font-size:20px;
+			}
+			#black p a {
+				color:#FFF;
+				}
+			#black li {
+				color:white;
+				list-style-type: none;
+			}
+			#black code.mark{
+				color:white;
+				list-style-type: none;
+			}
+	</style>
+</head>
+<body class="shower list">
+
+	<section class="slide black" id="cover">
+		<h2 class="shout shrink">Tarantool</h2>
+		<figure>
+			<img class="cover" src="pictures/tarantool_cover.jpg">
+			<figcaption class="white">
+				meetup 27.11.2017 Soldatov
+			</figcaption>
+		</figure>
+	</section>
+
+	<section class="slide black" id = "black">
+		<h2>Key features</h2>
+		<ul>
+			<li class="next"> SQL </li>
+			<li class="next"> ACID </li>
+			<li class="next"> master-master репликация </li>
+			<li class="next"> sharding из коробки </li>
+			<li class="next"> Application server + database </li>
+			<li class="next"> open-source </li>
+		</ul>
+	</section>
+
+	<section class="slide black" id = "black">
+		<h2>Джвижок базы данных</h2>
+		<ul>
+			<li class="next"> memtx (Always in-memory != cache) </li>
+			<li class="next"> vinyl (часть данных на диске) </li>
+		</ul>
+	</section>
+
+	<section class="slide black" id = "black">
+		<h2>Durability</h2>
+		<ul>
+			<li class="next"> snapshots (начиная с 1.7 системный copy-on-write заменен на самописный механизм наподобие MVCC, за счет этого снапшоты безболезненные) </li>
+			<li class="next"> WAL </li>
+			<li class="next"> shard redundancy </li>
+		</ul>
+		<p class="next"><a href="https://habrahabr.ru/company/oleg-bunin/blog/340062/">Подробнее про snapshot в Tarantool</a></p>
+	</section>
+
+	<section class="slide black" id = "black">
+		<h2>Последовательный WAL</h2>
+		<figure>
+			<img class="cover" src="pictures/wal.png">
+		</figure>
+	</section>
+
+	<section class="slide black" id = "black">
+		<h2>Дисковые БД vs in-memory</h2>
+		<p> В дисковых БД при записи кроме WAL (последовательная запись ~ миллион обращений в секунду)
+			еще обновляется b-tree индекс (случайное обращение к диску ~ 5000 обращений в секунду).
+			В in-memory нет необходимости читать и писать индексы на диск, они все в памяти. </p>
+		<p> vinyl tarantool тоже обновляет индексы на диске, но у них другая
+			структура (LSM-tree). </p>
+	</section>
+
+	<section class="slide black" id = "black">
+		<h2>Индексы</h2>
+		<ul>
+			<li class="next"> primary, secondary, multi-part </li>
+			<li class="next"> HASH, TREE, BITSET, and RTREE </li>
+		</ul>
+	</section>
+
+	<section class="slide black" id = "black">
+		<h2>Пример</h2>
+		<p> Простое приложение на Python3, которое хранит данные о митапах в
+			Tarantool можно посмотреть
+			<a href="https://github.com/yum-install-brains/tarantool_examples/tree/master/tarantool_example1">тут</a>.
+		</p>
+	</section>
+
+	<div class="progress"></div>
+
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2017 Yours Truly, Famous Inc. -->
+
+</body>
+</html>
