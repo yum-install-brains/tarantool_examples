@@ -1,3 +1,5 @@
+Презентация https://yum-install-brains.github.io/tarantool_examples
+
 Пример взаимодействия тарантула с Python3 приложением
 
 Подготовка:
